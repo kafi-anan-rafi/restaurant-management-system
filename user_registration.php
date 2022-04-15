@@ -14,7 +14,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="../web-tech-project/index.php">Let's Eat</a>
+            <a class="navbar-brand text-danger" href="../web-tech-project/index.php">Let's Eat</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -36,7 +36,7 @@
 
     <!-- Login Form -->
     <p class="mt-20"></p>
-    <div class="container d-flex flex-column align-items-center">
+    <div class="container d-flex flex-column">
         <form action="user_reg_validate.php" method="post">
             <h2 style="margin-bottom: 20px; margin-top: 10px">Customer Registration</h2>
             <?php if (isset($_GET['error'])) { ?>
@@ -44,7 +44,7 @@
             <?php } ?>
             <div class="mb-3">
                 <label for="exampleInputName1" class="form-label">Name</label>
-                <input type="email" name="user_name" required class="form-control" id="exampleInputName1" aria-describedby="emailHelp">
+                <input type="text" name="user_name" required class="form-control" id="exampleInputName1">
             </div>
             <div class="mb-3">
                 <label for="exampleInputAddress1" class="form-label">Address</label>
@@ -59,7 +59,7 @@
                 <input type="password" class="form-control" required name="user_password" id="exampleInputPassword1">
             </div>
             <button class="btn mb-3 btn-primary" type="submit">Register</button>
-            <p>Already have an account? <a href="user_index.php">Login</a></p>
+            <p>Already have an account? <a class="text-danger" href="user_index.php">Login</a></p>
         </form>
     </div>
 

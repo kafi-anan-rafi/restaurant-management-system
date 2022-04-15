@@ -2,5 +2,4 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: user_index.php");
-?>
+header("Location: index.php");

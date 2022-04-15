@@ -17,7 +17,7 @@ session_start();
     <!-- Navigation -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="../web-tech-project/index.php">Let's Eat</a>
+            <a class="navbar-brand text-danger" href="../web-tech-project/index.php">Let's Eat</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,15 +39,15 @@ session_start();
 
     <!-- Login Form -->
     <p class="mt-20"></p>
-    <div class="container d-flex flex-column align-items-center">
+    <div class="container d-flex flex-column">
         <form action="admin_reg_validate.php" method="post">
-            <h2 style="margin-bottom: 20px; margin-top: 10px">Admin Registration</h2>
+            <h2 style="margin-bottom: 20px; margin-top: 10px">Restaurant Registration</h2>
             <?php if (isset($_GET['error'])) { ?>
                 <p class="error alert alert-danger"><?php echo $_GET['error']; ?></p>
             <?php } ?>
             <div class="mb-3">
                 <label for="exampleInputName1" class="form-label">Restaurant Name</label>
-                <input type="email" name="res_name" required class="form-control" id="exampleInputName1" aria-describedby="emailHelp">
+                <input type="email" name="res_name" required class="form-control" id="exampleInputName1">
             </div>
             <div class="mb-3">
                 <label for="exampleInputAddress1" class="form-label">Address</label>

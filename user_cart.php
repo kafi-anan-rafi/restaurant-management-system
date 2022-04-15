@@ -11,7 +11,7 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../Styles/styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <title>Orders | <?php echo $_SESSION['user_name'] ?></title>
+  <title>About | <?php echo $_SESSION['user_name'] ?></title>
 </head>
 
 <body>
@@ -39,20 +39,11 @@ session_start();
   </nav>
 
   <div class="container">
-    <h3 style="margin-top: 20px;">Ordered Items</h3>
-    <p>Ordered items will be shown here!</p>
-
-    <a class="btn btn-danger" onclick="cancelOrder()" href="user_orders.php">Cancel Order</a>
-
-    <!-- if (order list empty) -->
-    <!-- You have not ordred anything -->
-    <!-- else -->
-    <!-- ordered item with price -->
+    <h3 style="margin-top: 20px;">Cart Items</h3>
+    <p>Cart items will be shown here!</p>
+    <a class="btn btn-danger" href="user_orders.php">Place Order</a>
   </div>
 
+</body>
 
-  <script>
-    function cancelOrder() {
-      alert('Order Canceled');
-    }
-  </script>
+</html>

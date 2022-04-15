@@ -7,7 +7,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../Styles/styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title>Lets Eat | Welcome</title>
 </head>
@@ -16,7 +15,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="../web-tech-project/index.php">Let's Eat</a>
+      <a class="navbar-brand text-danger" href="../web-tech-project/index.php">Let's Eat</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,7 +28,7 @@
             <a class="nav-link" href="./user_index.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-sm" style="color: white; background-color: #A9161E" href="./user_registration.php">Register</a>
+            <a class="nav-link btn btn-sm btn-danger text-white" href="./user_registration.php">Register</a>
           </li>
         </ul>
       </div>
@@ -39,7 +38,7 @@
   <!-- Carousel -->
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item active" style="background-image: url(./img/carousel-three.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
+      <div class="carousel-item" style="background-image: url(./img/carousel-three.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
         <div class="carousel-caption d-none d-md-block">
           <h1 style="padding-bottom: 200px; font-size: 4rem">Welcome to Let's Eat!</h1>
           <h5>Famous Chef</h5>
@@ -47,17 +46,17 @@
         </div>
       </div>
 
-      <div class="carousel-item" style="background-image: url(./img/carousel-two.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
+      <div class="carousel-item " style="background-image: url(./img/carousel-one.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
         <div class="carousel-caption d-none d-md-block">
           <h1 style="padding-bottom: 200px; font-size: 4rem">I'm sure you are hungry!</h1>
-          <h5>Teasty Food</h5>
+          <h5>Tasty Food</h5>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
       </div>
 
-      <div class="carousel-item" style="background-image: url(./img/carousel-one.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
+      <div class="carousel-item active" style="background-image: url(./img/menu.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
         <div class="carousel-caption d-none d-md-block">
-          <h1 style="padding-bottom: 200px; font-size: 4rem">Let's eat something.</h1>
+          <h1 style="padding-bottom: 200px; font-size: 4rem">Let's Eat Something.</h1>
           <h5>Delicious Food</h5>
           <p>Lorem ipsum dolor sit amet.</p>
         </div>
@@ -77,30 +76,28 @@
     </div>
   </div>
 
+  <h1 class="text-center">Delicious Foods</h1>
   <!-- Cards -->
-  <div class="container d-flex justify-content-between mb-20" style="margin-bottom: 30px">
+  <div class="container d-flex justify-content-between" style="margin: 40px auto">
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="/img/burger.jpeg" alt="Card image cap" style="">
+      <img class="card-img-top" src="img/burger.jpeg" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Burgers</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="/img/pizza.jpg" alt="Card image cap">
+      <img class="card-img-top" src="img/pizza-new.png" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Pizza</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
     <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="../img/chicken-fry.jpg" alt="Card image cap" style="background-position:center; width:fit-content">
+      <img class="card-img-top" src="img/chicken.jpg" alt="Card image cap">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Chicken</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
   </div>
@@ -127,7 +124,7 @@
   </div> -->
 
   <!-- Footer -->
-  <footer class="text-center text-white bg-dark">
+  <footer class="text-center text-white bg-secondary">
     <div class="container p-4">
 
       <section class="">
@@ -163,7 +160,7 @@
 
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         Copyright 2022 by
-        <a class="text-white" href="https://mdbootstrap.com/">Lets Eat</a>
+        <a class="text-white">Lets Eat</a>
       </div>
   </footer>
 
