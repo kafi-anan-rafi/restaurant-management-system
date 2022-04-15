@@ -7,96 +7,124 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="../Styles/styles.css">
-  <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
   <title>Lets Eat | Welcome</title>
 </head>
 
 <body>
+  <!-- Navigation -->
   <nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <div class="container" style="display: flex;">
-      <a class="navbar-brand" href="../lets-eat/index.php">Let's Eat</a>
+    <div class="container">
+      <a class="navbar-brand" href="../web-tech-project/index.php">Let's Eat</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="./index.php">Admin</a>
+            <a class="nav-link" href="./admin_index.php">Admin</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./userlogin.php">Login</a>
+            <a class="nav-link" href="./user_index.php">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-sm" style="color: white; background-color: #A9161E" href="./about.php">Register</a>
+            <a class="nav-link btn btn-sm" style="color: white; background-color: #A9161E" href="./user_registration.php">Register</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <main>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active" style="background-image: url(./img/carousel-three.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
-          <div class="carousel-caption d-none d-md-block">
-            <h1 style="padding-bottom: 200px; font-size: 4rem">Welcome to Let's Eat!</h1>
-            <h5>Famous Chef</h5>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
+  <!-- Carousel -->
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" style="background-image: url(./img/carousel-three.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 style="padding-bottom: 200px; font-size: 4rem">Welcome to Let's Eat!</h1>
+          <h5>Famous Chef</h5>
+          <p>Lorem ipsum dolor sit amet.</p>
         </div>
+      </div>
 
-        <div class="carousel-item" style="background-image: url(./img/carousel-two.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
-          <div class="carousel-caption d-none d-md-block">
-            <h1 style="padding-bottom: 200px; font-size: 4rem">I'm sure you are hungry!</h1>
-            <h5>Teasty Food</h5>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
+      <div class="carousel-item" style="background-image: url(./img/carousel-two.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 style="padding-bottom: 200px; font-size: 4rem">I'm sure you are hungry!</h1>
+          <h5>Teasty Food</h5>
+          <p>Lorem ipsum dolor sit amet.</p>
         </div>
+      </div>
 
-        <div class="carousel-item" style="background-image: url(./img/carousel-one.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
-          <div class="carousel-caption d-none d-md-block">
-            <h1 style="padding-bottom: 200px; font-size: 4rem">Let's eat something.</h1>
-            <h5>Delicious Food</h5>
-            <p>Lorem ipsum dolor sit amet.</p>
-          </div>
+      <div class="carousel-item" style="background-image: url(./img/carousel-one.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
+        <div class="carousel-caption d-none d-md-block">
+          <h1 style="padding-bottom: 200px; font-size: 4rem">Let's eat something.</h1>
+          <h5>Delicious Food</h5>
+          <p>Lorem ipsum dolor sit amet.</p>
         </div>
-        <a href="#myCarousel" class="carousel-control-prev" role="button" data-slide="prev">
-          <span class="sr-only">Previous</span>
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </a>
-        <a href="#myCarousel" class="carousel-control-mid" role="button" data-slide="mid">
-          <span class="sr-only">Mid</span>
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
-        <a href="#myCarousel" class="carousel-control-next" role="button" data-slide="next">
-          <span class="sr-only">Next</span>
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </a>
+      </div>
+      <a href="#myCarousel" class="carousel-control-prev" role="button" data-slide="prev">
+        <span class="sr-only">Previous</span>
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a href="#myCarousel" class="carousel-control-mid" role="button" data-slide="mid">
+        <span class="sr-only">Mid</span>
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+      <a href="#myCarousel" class="carousel-control-next" role="button" data-slide="next">
+        <span class="sr-only">Next</span>
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="container d-flex justify-content-between mb-20" style="margin-bottom: 30px">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="/img/burger.jpeg" alt="Card image cap" style="">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
       </div>
     </div>
-
-    <!-- Login Form -->
-    <div class="container d-flex flex-column align-items-center">
-      <form action="user_login.php" method="post">
-        <h5>Login as Customer!</h5>
-        <?php if (isset($_GET['error'])) { ?>
-          <p class="error alert alert-danger"><?php echo $_GET['error']; ?></p>
-        <?php } ?>
-        <label>E-mail <span class="text-danger">*</span></label> <br>
-        <input type="text" name="user_mail" required><br>
-        <label>Password <span class="text-danger">*</span></label> <br>
-        <input type="password" name="user_password" required><br>
-        <button class="btn mt-3 mb-4 btn-sm btn-primary" type="submit">Login</button>
-        <p>Don't have a user account? <a href="user_registration.php">Register</a></p>
-      </form>
-      <h5 class="text-danger">Are you an admin? <a href="admin_index.php">click here</a></h5>
-
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="/img/pizza.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
     </div>
-  </main>
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="../img/chicken-fry.jpg" alt="Card image cap" style="background-position:center; width:fit-content">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login Form -->
+  <!-- <div id="#login" class="container d-flex flex-column align-items-center">
+    <form action="user_login.php" method="post">
+      <h2 style="margin-bottom: 20px; margin-top: 10px">Login</h2>
+      <?php if (isset($_SESSION['error'])) { ?>
+        <p class="error alert alert-danger"><?php echo $_SESSION['error']; ?></p>
+      <?php } ?>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" name="user_mail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="user_password" id="exampleInputPassword1">
+      </div>
+      <button class="btn mb-3 btn-primary" type="submit">Login</button>
+      <p>Don't have a user account? <a href="user_registration.php">Register</a></p>
+      <h5 style="margin-bottom: 30px;">Are you an admin? <a href="admin_index.php">Login here</a></h5>
+    </form>
+  </div> -->
 
   <!-- Footer -->
   <footer class="text-center text-white bg-dark">
