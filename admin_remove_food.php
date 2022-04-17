@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'db_conn.php';
 ?>
 
 <!DOCTYPE html>
@@ -47,16 +48,48 @@ session_start();
   </nav>
 
   <div class="container">
-    <h2 style="margin-top: 20px;">Remove Items</h2>
-    <table class="table">
-      <thead>
-        <th>Food Name</th>
-        <th>Price</th>
-        <th>Delete</th>
-      </thead>
-      <table>
+    <?php
+    $id = $_SESSION['res_id'];
+    $sql = "SELECT * FROM food where id = $id";
+    $result = mysqli_query($conn, $sql) or die("Failed to query database");
+    $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+    if (empty($items)) : ?>
+      <p class="lead mt3">There is no Food</p>
+    <?php endif; ?>
+    <div class="container d-flex flex-wrap justify-content-between">
+      <?php foreach ($items as $item) : ?>
+        <form action="admin_remove_food.php" method="post">
+          <div class="card" style="width: 18rem; margin-bottom: 25px; margin-top: 25px">
+            <img class="card-img-top" src="img/burger.jpeg">
+            <div class="card-body">
+              <h5 class="card-title"><?php echo $item['food_name'] ?></h5>
+              <p class="card-text"><?php echo $item['food_description'] ?></p>
+              <div class="d-flex justify-content-between">
+                <button class="btn btn-sm btn-danger text-white" type="submit">Remove</button>
+                <b><?php echo $item['food_price'] ?> tk</b>
+              </div>
+            </div>
+          </div>
+          <?php
+          // $cart = $id+'cart';
+          // $_SESSION[$cart];
+          $_SESSION['food_name'] = $item['food_name'];
+          $_SESSION['food_description'] = $item['food_description'];
+          $_SESSION['food_price'] = $item['food_price'];
+          $_SESSION['count'] = 0;
+          ?>
+        </form>
+      <?php endforeach; ?>
+    </div>
   </div>
 
 </body>
 
 </html>
+
+
+<?php
+
+
+?>

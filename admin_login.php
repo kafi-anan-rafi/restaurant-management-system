@@ -9,10 +9,11 @@ $sql = "select * from restaurant where res_email='$res_email' and res_password='
 $result = mysqli_query($conn, $sql) or die("Failed to query database");
 $rows = mysqli_num_rows($result);
 
-if($rows > 0){
+if ($rows > 0) {
   $row = mysqli_fetch_assoc($result);
-  if($row['res_email'] == $res_email && $row['res_password'] == $res_password){
-    $_SESSION['res_id'] = $row['res_id'];
+  if ($row['res_email'] == $res_email && $row['res_password'] == $res_password) {
+    $_SESSION['res_id'] = $row['id'];
+    $_SESSION['res_email'] = $res_email;
     $_SESSION['res_name'] = $row['res_name'];
     header("location: admin_home.php");
     exit();
@@ -22,5 +23,3 @@ if($rows > 0){
   header("Location: admin_index.php");
   exit();
 }
-
-?>

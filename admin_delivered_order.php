@@ -1,4 +1,5 @@
 <?php
+require 'db_conn.php';
 session_start();
 ?>
 
@@ -48,9 +49,42 @@ session_start();
   </nav>
 
   <div class="container">
-    <h2 style="margin-top: 20px;">Delivered Orders</h2>
-    <p>Delivered Orders will be shown here!</p>
+    <?php
+    $sql = "SELECT * FROM orders";
+    $result = mysqli_query($conn, $sql) or die("Failed to query database");
+    $rows = mysqli_num_rows($result);
+
+    if ($rows > 0) {
+      $id = $_SESSION['res_id'];
+      $sql = "SELECT * FROM orders where res_id = $id and status='delivered'";
+      $result = mysqli_query($conn, $sql) or die("Failed to query database");
+      $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
+    ?>
+
+      <div class="container d-flex flex-wrap justify-content-between">
+        <?php foreach ($items as $item) : ?>
+          <form action="admin_remove_food.php" method="post">
+            <div class="card" style="width: 18rem; margin-bottom: 25px; margin-top: 25px">
+              <img class="card-img-top" src="img/burger.jpeg">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $item['food_name'] ?></h5>
+                <p class="card-text"><?php echo $item['food_description'] ?></p>
+                <div class="d-flex justify-content-between">
+                  <button class="btn btn-sm btn-primary text-white" type="submit">Deliver</button>
+                  <b><?php echo $item['food_price'] ?> tk</b>
+                </div>
+              </div>
+            </div>
+          </form>
+        <?php endforeach; ?>
+      </div>
+    <?php
+    } else { ?>
+      <h2 style="margin-top: 20px;"></h2>
+      <p class="alert alert-danger">No order delivered yet!</p>
+    <?php } ?>
   </div>
+
 </body>
 
 </html>

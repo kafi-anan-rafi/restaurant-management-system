@@ -38,7 +38,7 @@
   <!-- Carousel -->
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-      <div class="carousel-item" style="background-image: url(./img/carousel-three.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
+      <div class="carousel-item" style="background-image: url(./img/carousel-three.jpg); height: 32rem; background-position: center;background-size: cover; color: white;">
         <div class="carousel-caption d-none d-md-block">
           <h1 style="padding-bottom: 200px; font-size: 4rem">Welcome to Let's Eat!</h1>
           <h5>Famous Chef</h5>
@@ -46,7 +46,7 @@
         </div>
       </div>
 
-      <div class="carousel-item " style="background-image: url(./img/carousel-one.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
+      <div class="carousel-item " style="background-image: url(./img/carousel-one.jpg); height: 32rem; background-position: center;background-size: cover; color: white;">
         <div class="carousel-caption d-none d-md-block">
           <h1 style="padding-bottom: 200px; font-size: 4rem">I'm sure you are hungry!</h1>
           <h5>Tasty Food</h5>
@@ -54,7 +54,7 @@
         </div>
       </div>
 
-      <div class="carousel-item active" style="background-image: url(./img/menu.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
+      <div class="carousel-item active" style="background-image: url(./img/menu.jpg); height: 32rem; background-position: center;background-size: cover; color: white;">
         <div class="carousel-caption d-none d-md-block">
           <h1 style="padding-bottom: 200px; font-size: 4rem">Let's Eat Something.</h1>
           <h5>Delicious Food</h5>
@@ -76,7 +76,7 @@
     </div>
   </div>
 
-  <h1 class="text-center">Delicious Foods</h1>
+  <h1 class="text-center">Your Fovourite Foods</h1>
   <!-- Cards -->
   <div class="container d-flex justify-content-between" style="margin: 40px auto">
     <div class="card" style="width: 18rem;">
@@ -124,7 +124,7 @@
   </div> -->
 
   <!-- Footer -->
-  <footer class="text-center text-white bg-secondary">
+  <footer class="text-center text-white bg-danger">
     <div class="container p-4">
 
       <section class="">
@@ -152,10 +152,10 @@
       </section>
 
       <section class="mb-4">
-        <p>
+        <!-- <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
           repellat quaerat voluptatibus placeat nam, commodi.
-        </p>
+        </p> -->
       </section>
 
       <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">

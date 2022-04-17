@@ -1,8 +1,9 @@
 <?php
 session_start();
+include "db_conn.php";
+$_SESSION['count'] = 0;
 if (isset($_SESSION['user_name'])) {
 ?>
-
      <!DOCTYPE html>
      <html>
 
@@ -25,11 +26,11 @@ if (isset($_SESSION['user_name'])) {
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                          <ul class="navbar-nav ml-auto">
-                              <li class="nav-item">
+                              <!-- <li class="nav-item">
                                    <a class="nav-link" href="./user_cart.php"><span class="bg-danger px-1 text-white rounded-circle">0</span>Cart</a>
-                              </li>
+                              </li> -->
                               <li class="nav-item">
-                                   <a class="nav-link" href="./user_orders.php">Orders</a>
+                                   <a class="nav-link" style="margin-right: 5px" href="./user_orders.php"><span class="bg-danger px-1 mr-1 text-white rounded-circle">0</span>Orders</a>
                               </li>
                               <li class="nav-item">
                                    <a class="nav-link btn btn-sm btn-danger text-white" href="./user_logout.php">Logout</a>
@@ -42,7 +43,7 @@ if (isset($_SESSION['user_name'])) {
           <!-- Carousel -->
           <div id="myCarousel" class="carousel slide" data-ride="carousel">
                <div class="carousel-inner">
-                    <div class="carousel-item active" style="background-image: url(./img/pizza-one.jpg); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
+                    <div class="carousel-item active" style="background-image: url(./img/pizza-new.png); height: 32rem; width: 90rem; background-position: center;background-size: cover; color: white;">
                          <div class="carousel-caption d-none d-md-block">
                               <h2 style="padding-bottom: 200px; font-size: 3rem;"><span class="text-light bg-danger pl-2 pr-2">Welcome <?php echo $_SESSION['user_name'] ?>!</span></h2>
                               <h5>Restaurant</h5>
@@ -55,31 +56,44 @@ if (isset($_SESSION['user_name'])) {
 
           <div class="container">
                <h1 class="text-center" style="margin-top: 20px;">Want to eat something?</h1>
-
-               <h3 class="mt-4">Foods</h3>
+               <p class="text-center" style="margin-bottom: 20px;">Order food now. You will get the food within 30 minute</p>
 
                <!-- query food items from database -->
                <!-- store them in associative array -->
                <!-- use loop to print them here as cart -->
                <?php
-               include "db_conn.php";
-               $sql = "select food_name, food_category, food_price from food";
+               $sql = "SELECT * FROM food";
                $result = mysqli_query($conn, $sql) or die("Failed to query database");
-               $rows = mysqli_num_rows($result);
+               $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-               if ($rows > 0) {
-                    $row = mysqli_fetch_assoc($result); ?>
-                    <table class="table">
-                         <thead>
-                              <th>Name</th>
-                              <th>Category</th>
-                              <th>Price</th>
-                              <th></th>
-                         </thead>
-
-
-                    </table>
-               <?php } ?>
+               if (empty($items)) : ?>
+                    <p class="lead mt3">There is no Food</p>
+               <?php endif; ?>
+               <div class="container d-flex flex-wrap justify-content-between">
+                    <?php foreach ($items as $item) : ?>
+                         <form action="user_place_order.php" method="post">
+                              <div class="card" style="width: 18rem; margin-bottom: 25px">
+                                   <img class="card-img-top" src="img/burger.jpeg">
+                                   <div class="card-body">
+                                        <h5 class="card-title"><?php echo $item['food_name'] ?></h5>
+                                        <p class="card-text"><?php echo $item['food_description'] ?></p>
+                                        <div class="d-flex justify-content-between">
+                                             <button class="btn btn-sm btn-danger text-white" type="submit">Order</button>
+                                             <b><?php echo $item['food_price'] ?> tk</b>
+                                        </div>
+                                   </div>
+                              </div>
+                              <?php
+                              // $cart = $id+'cart';
+                              // $_SESSION[$cart];
+                              $_SESSION['food_name'] = $item['food_name'];
+                              $_SESSION['food_description'] = $item['food_description'];
+                              $_SESSION['food_price'] = $item['food_price'];
+                              $_SESSION['count'] = 0;
+                              ?>
+                         </form>
+                    <?php endforeach; ?>
+               </div>
           </div>
 
 

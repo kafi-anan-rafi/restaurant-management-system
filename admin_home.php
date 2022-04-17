@@ -61,13 +61,13 @@ if (isset($_SESSION['res_name'])) {
                </div>
           </div>
 
-          <div class="container">
+          <!-- <div class="container">
                <h1 style="margin-top: 20px;">Pending Orders</h1>
                <a class="btn btn-sm btn-primary" href="admin_add_food.php">Add Food</a>
                <a class="btn btn-sm btn-secondary" href="admin_update_food.php">Update Food List</a>
                <a class="btn btn-sm btn-warning" href="admin_remove_food.php">Remove Food</a>
                <a class="btn btn-sm btn-danger" href="admin_logout.php">Logout</a>
-          </div>
+          </div> -->
      </body>
 
      </html>

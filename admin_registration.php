@@ -30,7 +30,7 @@ session_start();
                         <a class="nav-link" href="./user_index.php">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-sm" style="color: white; background-color: #A9161E" href="./user_registration.php">Register</a>
+                        <a class="nav-link btn btn-sm btn-danger text-white" href="./user_registration.php">Register</a>
                     </li>
                 </ul>
             </div>
@@ -47,7 +47,7 @@ session_start();
             <?php } ?>
             <div class="mb-3">
                 <label for="exampleInputName1" class="form-label">Restaurant Name</label>
-                <input type="email" name="res_name" required class="form-control" id="exampleInputName1">
+                <input type="text" name="res_name" required class="form-control" id="exampleInputName1">
             </div>
             <div class="mb-3">
                 <label for="exampleInputAddress1" class="form-label">Address</label>
@@ -62,7 +62,7 @@ session_start();
                 <input type="password" class="form-control" required name="res_password" id="exampleInputPassword1">
             </div>
             <button class="btn mb-3 btn-primary" type="submit">Register</button>
-            <p>Already have an account? <a href="admin_login.php">Login</a></p>
+            <p>Already have an account? <a class="text-danger" href="admin_login.php">Login</a></p>
         </form>
     </div>
 

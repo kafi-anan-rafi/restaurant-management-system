@@ -24,11 +24,11 @@ session_start();
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="./user_cart.php"><span class="bg-danger px-1 text-white rounded-circle">0</span>Cart</a>
-          </li>
+          </li> -->
           <li class="nav-item">
-            <a class="nav-link" href="./user_orders.php">Orders</a>
+            <a class="nav-link" href="./user_orders.php"><span class="bg-danger px-1 text-white rounded-circle">0</span>Orders</a>
           </li>
           <li class="nav-item">
             <a class="nav-link btn btn-sm btn-danger text-white" href="./user_logout.php">Logout</a>

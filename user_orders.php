@@ -1,5 +1,6 @@
 <?php
 session_start();
+$items = $_SESSION['count'];
 ?>
 
 <!DOCTYPE html>
@@ -24,11 +25,11 @@ session_start();
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="./user_cart.php"><span class="bg-danger px-1 text-white rounded-circle">0</span>Cart</a>
-          </li>
+          </li> -->
           <li class="nav-item">
-            <a class="nav-link" href="./user_orders.php">Orders</a>
+            <a class="nav-link" href="./user_orders.php"><span class="bg-danger px-1 text-white rounded-circle"><?php echo $items ?></span>Orders</a>
           </li>
           <li class="nav-item">
             <a class="nav-link btn btn-sm btn-danger text-white" href="./user_logout.php">Logout</a>
@@ -42,17 +43,14 @@ session_start();
     <h3 style="margin-top: 20px;">Ordered Items</h3>
     <p>Ordered items will be shown here!</p>
 
-    <a class="btn btn-danger" onclick="cancelOrder()" href="user_orders.php">Cancel Order</a>
+    <?php 
+    
+    ?>
+
+    <a class="btn btn-danger" href="user_orders.php">Cancel Order</a>
 
     <!-- if (order list empty) -->
     <!-- You have not ordred anything -->
     <!-- else -->
     <!-- ordered item with price -->
   </div>
-
-
-  <script>
-    function cancelOrder() {
-      alert('Order Canceled');
-    }
-  </script>

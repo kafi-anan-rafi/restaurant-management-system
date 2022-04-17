@@ -1,5 +1,6 @@
 <?php
 session_start();
+include "db_conn.php";
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +26,7 @@ session_start();
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="./admin_pending_order.php"><span class="bg-danger px-1 text-white rounded-circle">0</span>Order</a>
+            <a class="nav-link" href="./admin_pending_order.php"><span class="bg-danger px-1 text-white rounded-circle">0</span>Pending</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="admin_delivered_order.php">Delivered</a>
@@ -48,8 +49,43 @@ session_start();
   </nav>
 
   <div class="container">
-    <h2 style="margin-top: 20px;">Pending Orders</h2>
-    <p>Pending Order List will be shown here!</p>
+    <?php
+    $sql = "SELECT * FROM orders";
+    $result = mysqli_query($conn, $sql) or die("Failed to query database");
+    $rows = mysqli_num_rows($result);
+
+    if ($rows > 0) { ?>
+      <?php
+      $id = $_SESSION['res_id'];
+      $sql = "SELECT * FROM foods where res_id = $id and status='pending'";
+      $result = mysqli_query($conn, $sql) or die("Failed to query database");
+      $items = mysqli_fetch_all($result, MYSQLI_ASSOC);
+      ?>
+
+      <div class="container d-flex flex-wrap justify-content-between">
+        <?php foreach ($items as $item) : ?>
+          <form action="admin_remove_food.php" method="post">
+            <div class="card" style="width: 18rem; margin-bottom: 25px; margin-top: 25px">
+              <img class="card-img-top" src="img/burger.jpeg">
+              <div class="card-body">
+                <h5 class="card-title"><?php echo $item['food_name'] ?></h5>
+                <p class="card-text"><?php echo $item['food_description'] ?></p>
+                <div class="d-flex justify-content-between">
+                  <button class="btn btn-sm btn-primary text-white" type="submit">Deliver</button>
+                  <b><?php echo $item['food_price'] ?> tk</b>
+                </div>
+              </div>
+            </div>
+          </form>
+        <?php endforeach; ?>
+      </div>
+    <?php
+    } else { ?>
+      <h2 style="margin-top: 20px;"></h2>
+      <p class="alert alert-success">No Order Pending!</p>
+    <?php } ?>
+
+
   </div>
 </body>
 

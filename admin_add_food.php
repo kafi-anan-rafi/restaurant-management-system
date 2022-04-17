@@ -51,7 +51,7 @@ session_start();
     <h2 style="margin-top: 20px;">Add Food Item</h2>
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem officia sint reiciendis suscipit. Quas, voluptatem.</p>
     <?php if (isset($_SESSION['message'])) { ?>
-      <p class="alert alert-success"><?php echo $_SESSION['message']; ?></p>
+      <p class="alert alert-info"><?php echo $_SESSION['message']; ?></p>
     <?php } ?>
 
     <form action="admin_process_food.php" method="post">

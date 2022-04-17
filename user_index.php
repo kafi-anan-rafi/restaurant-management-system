@@ -27,7 +27,7 @@ session_start();
                         <a class="nav-link" href="./user_login.php">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-sm" style="color: white; background-color: #A9161E" href="./user_registration.php">Register</a>
+                        <a class="nav-link btn btn-sm btn-danger text-white" href="./user_registration.php">Register</a>
                     </li>
                 </ul>
             </div>
